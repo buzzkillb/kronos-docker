@@ -46,6 +46,8 @@ services:
     image: "kronos"
     container_name: "kronos-headless"
     restart: always 
+    volumes:
+        - '~/kronosdata:/root/Kronos/DATA'
     labels:
       - "traefik.enable=true"
       - "traefik.http.routers.kronos.rule=Host(`kronos.example.com`)"
